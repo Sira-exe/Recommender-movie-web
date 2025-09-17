@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Movie Recommender</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    AI Movie<br> Recommender
+    <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
+  </header>
+
+  <div class="container">
+    <h2>🔍 Search / Add Movie</h2>
+    <form id="movieForm">
+      <label for="title">Movie Title:</label>
+      <div class="suggestions">
+        <input id="title" type="text" placeholder="e.g., Inception, Joker, Avatar"
+               autocomplete="off" enterkeyhint="done" autofocus />
+        <div id="suggList" class="suggestions-list" style="display:none;"></div>
+      </div>
+
+      <div class="preview-wrapper">
+        <div id="previewBox" class="movie-preview hidden">
+          <img id="previewPoster" alt="Movie Poster" />
+          <div class="info-card">
+            <h3 id="previewTitle" class="preview-title"></h3>
+            <p class="info-row"><b>📘 Genre:</b> <span id="previewGenre"></span></p>
+            <p class="info-row"><b>⭐ Rating:</b> <span id="previewRating"></span></p>
+            <p class="info-row"><b>📝 Overview:</b> <span id="previewReview"></span></p>
+
+            <!-- 👇 Add Movie button (submits form) -->
+            <button id="addBtn" type="submit">➕ Add Movie</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <h2 class="list-title">🎬 Movie List</h2>
+    <table>
+      <thead><tr><th>Name</th><th>Genre</th><th>Rating</th><th>Actions</th></tr></thead>
+      <tbody id="movieList"></tbody>
+    </table>
+
+    <h2>🤖 AI Recommendation</h2>
+    <div class="recommendation-box" id="aiRecommendation">
+      Add movies to get smart recommendations here!
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
